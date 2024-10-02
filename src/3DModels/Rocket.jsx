@@ -12,7 +12,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/assets/rocket.gltf");
+  const { nodes, materials } = useGLTF("/assets/rocket/rocket.gltf");
   const modelRef = useRef(null); //creating reference to access the DOM element
 
   useFrame(() => {
@@ -110,4 +110,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/assets/rocket.gltf");
+useGLTF.preload("/assets/rocket/rocket.gltf");

@@ -23,13 +23,7 @@ const ProductDisplay = ({ modelObj, isPopupOpen, onPopupToggle }) => {
       <Canvas>
         <ambientLight intensity={1.5} />
         <ModelComponent />
-        {ModelComponent === Earth ? ( //adjusted max and min zoom so that 3D models can be zoomed wrt their size
-          <OrbitControls minDistance={2} maxDistance={8} />
-        ) : ModelComponent === Pluto ? (
-          <OrbitControls minDistance={2} maxDistance={6} />
-        ) : (
-          <OrbitControls minDistance={5} maxDistance={10} />
-        )}
+        <OrbitControls minDistance={3} maxDistance={8.5} />
       </Canvas>
       <p
         className="card-description"

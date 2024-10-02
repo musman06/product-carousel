@@ -12,11 +12,11 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/assets/sun.gltf");
+  const { nodes, materials } = useGLTF("/assets/sun/sun.gltf");
   const modelRef = useRef(null); //creating reference to access the DOM element
 
   useFrame(() => {
-    modelRef.current.rotation.y += 0.005; //adding rotation using useFrame hook
+    modelRef.current.rotation.y += 0.01; //adding rotation using useFrame hook
   });
   return (
     <group {...props} dispose={null}>
@@ -24,10 +24,10 @@ export default function Model(props) {
         ref={modelRef}
         geometry={nodes.Object_4.geometry}
         material={materials["Scene_-_Root"]}
-        scale={2.633}
+        scale={1.5}
       />
     </group>
   );
 }
 
-useGLTF.preload("/assets/sun.gltf");
+useGLTF.preload("/assets/sun/sun.gltf");

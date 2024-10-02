@@ -4,7 +4,7 @@ import Carousel from "./components/Carousel";
 const App = () => {
   return (
     <div className="container">
-      <h2>Product Carousel</h2>
+      <h2 className="heading">Product Carousel</h2>
       <Carousel />
     </div>
   );

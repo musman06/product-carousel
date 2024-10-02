@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductDisplay from "./ProductDisplay";
 
-const Cards = ({ modelsArray, carouselSize, startIndex }) => {
+const Cards = ({ modelsArray, startIndex, carouselSize }) => {
   const [activePopupId, setActivePopupId] = useState(null); //usestate to handle popup display
 
   const handlePopupToggle = (id) => {
@@ -13,22 +13,18 @@ const Cards = ({ modelsArray, carouselSize, startIndex }) => {
   };
 
   //function to get only that 3D models that need to be displayed
-  const getDisplayedModels = (modelsArray, startIndex, carouselSize) => {
-    let result = [];
+  const getDisplayModels = (modelsArray, startIndex, carouselSize) => {
+    let fetchedModels = [];
     for (let i = 0; i < carouselSize; i++) {
-      result.push(modelsArray[(startIndex + i) % modelsArray.length]);
+      fetchedModels.push(modelsArray[(startIndex + i) % modelsArray.length]);
     }
-    return result;
+    return fetchedModels;
   };
 
-  const displayedModels = getDisplayedModels(
-    //array to store 3D models that need to be displayed so we can use map on it
-    modelsArray,
-    startIndex,
-    carouselSize
-  );
+  //array to store 3D models that need to be displayed so we can use map on it
+  const displayModels = getDisplayModels(modelsArray, startIndex, carouselSize);
 
-  return displayedModels.map((modelObj) => {
+  return displayModels.map((modelObj) => {
     return (
       <ProductDisplay
         key={modelObj.id} //setting the key on individual item in mapping since its a good practise

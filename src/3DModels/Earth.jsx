@@ -12,7 +12,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/assets/earth.gltf");
+  const { nodes, materials } = useGLTF("/assets/earth/earth.gltf");
   const modelRef = useRef(null); //creating reference to access the DOM element
 
   useFrame(() => {
@@ -25,10 +25,10 @@ export default function Model(props) {
         ref={modelRef}
         geometry={nodes.Object_4.geometry}
         material={materials["Scene_-_Root"]}
-        scale={1.128}
+        scale={1.5}
       />
     </group>
   );
 }
 
-useGLTF.preload("/assets/earth.gltf");
+useGLTF.preload("/assets/earth/earth.gltf");

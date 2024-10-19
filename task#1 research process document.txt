@@ -1,0 +1,12 @@
+1.) Used MaterialUI for arrow icons
+2.) Explored a stack overflow link to increase the size of MaterialUI arrow icons
+3.) Used Sketchfab website to download 3D models
+    https://sketchfab.com/3d-models/earth-f7a76c63ff1846afb2d606e5c8369c15
+4.) Used chatGPT regarding passing function to a child component and then calling it in child component from parent's body
+5.) Used npx gltfjsx earth.gltf command to convert .gltf files into JSX components
+6.) Visited the following link to make the 3D models continuously rotate around their y-axis
+    https://geekyants.com/blog/introduction-to-react-three-fiber
+7.) Visited the following link to learn more about useRef hook so it can be used for rotation
+    https://react.dev/reference/react/useRef
+8.) Learned about react-three/fiber from the documentation of it
+    https://r3f.docs.pmnd.rs/getting-started/introduction
